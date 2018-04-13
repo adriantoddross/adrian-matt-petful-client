@@ -20,7 +20,7 @@ export class Dashboard extends Component {
       story: 'Rejected by mother.'
     };
 
-    let cat =   {
+    let cat = {
       imageURL: 'https://static.pexels.com/photos/20787/pexels-photo.jpg',
       imageDescription: 'Grey siamese cat with bright green eyes, looking up to the camera.',
       name: 'Test Kitty',
@@ -32,10 +32,11 @@ export class Dashboard extends Component {
 
     let animalLoading = '';
 
-    if (this.props.dog && this.props.cat) {
+    if (this.props.cat && this.props.dog) {
       cat = this.props.cat;
       dog = this.props.dog;
 }
+
 
     if (this.props.catLoading || this.props.dogLoading) {
       animalLoading = 'Finding our next animal up for adoption!';

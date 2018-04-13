@@ -11,8 +11,9 @@ export const fetchCatSuccess = animal => ({
 export const fetchCatRequest = () => ({
   type: FETCH_CAT_REQUEST
 });
-export const fetchCatError = () => ({
-  type: FETCH_CAT_ERROR
+export const fetchCatError = error => ({
+  type: FETCH_CAT_ERROR,
+  error
 });
 
 export function fetchCat(animal) {

@@ -1,7 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-
-
 
 export default function Dashboard(catToAdopt, dogToAdopt) {
 
@@ -22,7 +19,6 @@ export default function Dashboard(catToAdopt, dogToAdopt) {
                 <dd>{catToAdopt.breed}</dd>
                 <dt>Story</dt>
                 <dd>{catToAdopt.story}</dd>
-                <button>Adopt</button>
               </dl>
             </main>
             <button type="submit">Adopt</button>
@@ -42,7 +38,6 @@ export default function Dashboard(catToAdopt, dogToAdopt) {
                 <dd>{dogToAdopt.breed}</dd>
                 <dt>Story</dt>
                 <dd>{dogToAdopt.story}</dd>
-                <button>Adopt</button>
               </dl>
             </main>
             <button type="submit">Adopt</button>

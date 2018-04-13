@@ -49,7 +49,7 @@ export const deleteDogError = error => ({
 
 export const deleteDog = () => dispatch => {
   dispatch(deleteDogRequest());
-  return fetch(`${API_BASE_URL}/api/cat`, {
+  return fetch(`${API_BASE_URL}/api/dog`, {
     method: 'DELETE',
   })
   .then(res => {

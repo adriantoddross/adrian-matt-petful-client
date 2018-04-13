@@ -20,7 +20,7 @@ export default function Pet(props) {
               <dd>{props.animal.story}</dd>
             </dl>
           </main>
-          <button type="submit">Adopt</button>
+          <button onClick={props.onAdoptPet} type='submit'>Adopt</button>
       </section>
   )
 }

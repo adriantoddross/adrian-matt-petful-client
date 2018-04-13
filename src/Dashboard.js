@@ -48,12 +48,12 @@ export class Dashboard extends Component {
         <h1>{animalLoading}</h1>
         <Pet
           animal={cat}
-          onAdoptPet={() => {console.log('Pet adopted')}}
+          onAdoptPet={() => {this.props.dispatch(fetchCat())}}
           />
           <p>{this.props.catError}</p>
         <Pet
           animal={dog}
-          onAdoptPet={() => {console.log('Pet adopted')}}
+          onAdoptPet={() => {this.props.dispatch(fetchDog())}}
           />
           <p>{this.props.dogError}</p>
       </div>

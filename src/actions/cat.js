@@ -46,3 +46,19 @@ export const deleteCatError = error => ({
   type: DELETE_CAT_ERROR,
   error
 });
+
+export const deleteCat = (animal) => dispatch => {
+  dispatch(deleteCatRequest());
+
+  return fetch(`${API_BASE_URL}/api/cat`, {
+    method: 'DELETE',
+  })
+  .then(res => {
+    if (!res.ok) {
+      throw new Error('Cat not found');
+    }
+    return res.json(res);
+  })
+  .then(animal => {dispatch(deleteCatSuccess(animal))})
+  .catch(err => {dispatch(deleteCatError(err))});
+}

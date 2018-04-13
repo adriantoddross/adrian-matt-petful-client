@@ -7,22 +7,27 @@ import { fetchCat, fetchDog } from './actions/index';
 export class Dashboard extends Component {
   componentDidMount(){
     this.props.dispatch(fetchCat());
-  //   this.props.dispatch(fetchDog());
+    this.props.dispatch(fetchDog());
 
   }
 
   render() {
+    // console.log('ANIMAL', this.props.cat.animal);
+    let dog;
+    if (this.props.dog) {
+      dog = this.props.dog;
+      console.log(dog);
+    }
+    
+
     return (
       <div className="App">
-        {/* <h3>{this.props.cat}</h3> */}
-        {/* <Pet 
-          animal={this.props.cat} 
+        {/* <p>{this.props.catError}</p> */}
+        <Pet 
+          animal={dog} 
           onAdoptPet={() => {console.log('Pet adopted')}} 
         />
-        <Pet 
-          animal={this.props.dog} 
-          onAdoptPet={() => {console.log('Pet adopted')}} 
-        /> */}
+        <p>{this.props.dogError}</p>        
       </div>
     );
   }
@@ -30,7 +35,9 @@ export class Dashboard extends Component {
 
 const mapStateToProps = (state) => ({
   cat: state.cat.animal,
-  dog: state.dog.animal
+  dog: state.dog.animal,
+  catError: state.cat.error,
+  dogError: state.dog.error
 });
 
 export default connect(mapStateToProps)(Dashboard);

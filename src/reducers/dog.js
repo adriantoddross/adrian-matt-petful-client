@@ -14,6 +14,7 @@ export function dogReducer(state=initialState, action) {
     return Object.assign({}, state, { loading: false, error: action.error });
   }
   if (action.type === FETCH_DOG_SUCCESS) {
+    console.log(action.animal);
     return Object.assign({}, state, { loading: false, error: null, animal: action.animal});
   } return state;
 }

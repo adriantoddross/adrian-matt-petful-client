@@ -17,13 +17,14 @@ export const fetchCatError = error => ({
 });
 
 export const fetchCat = (animal) => dispatch => {
-  dispatch(fetchCatRequest())
-  .then(fetch(`${API_BASE_URL}/api/cat`))
+  dispatch(fetchCatRequest());
+
+  return fetch(`${API_BASE_URL}/api/cat`)
   .then(res => {
     if (!res.ok) {
       throw new Error('Cat not found');
     } 
-    return res.json();
+    return res.json(res);
   })
   .then(animal => {dispatch(fetchCatSuccess(animal))})
   .catch(err => {dispatch(fetchCatError(err))});

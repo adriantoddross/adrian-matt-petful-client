@@ -1,7 +1,9 @@
 import React from 'react';
 import Pet from './Pet';
 
-export default function Dashboard(props) {
+import { connect } from 'react-redux';
+
+export function Dashboard(props) {
   const Fluffy = {
     imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
     imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
@@ -35,3 +37,8 @@ export default function Dashboard(props) {
     </div>
   );
 }
+
+const mapStateToProps = (state) => ({
+  cat: state.cat.animal,
+  dog: state.dog.animal
+});

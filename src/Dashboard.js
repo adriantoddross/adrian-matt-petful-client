@@ -22,11 +22,16 @@ export default function Dashboard(props) {
     story: 'Owner Passed away'
   }
 
-    return (
-      <div className="App">
-        <Pet animal={Fluffy}/>
-        <Pet animal={Zeus}/>
-        
-      </div>
-    );
+  return (
+    <div className="App">
+      <Pet 
+        animal={Fluffy} 
+        onAdoptPet={() => {console.log('Pet adopted')}} 
+      />
+      <Pet 
+        animal={Zeus} 
+        onAdoptPet={() => {console.log('Pet adopted')}} 
+      />
+    </div>
+  );
 }

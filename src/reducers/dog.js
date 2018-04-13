@@ -1,4 +1,4 @@
-import { FETCH_CAT_SUCCESS, FETCH_CAT_REQUEST, FETCH_CAT_ERROR } from '../actions/index';
+import { FETCH_DOG_SUCCESS, FETCH_DOG_REQUEST, FETCH_DOG_ERROR } from '../actions/index';
 
 const initialState = {
   animal: null, 
@@ -6,14 +6,14 @@ const initialState = {
   loading: false
 };
 
-export function catReducer(state=initialState, action) {
-  if (action.type === FETCH_CAT_REQUEST) {
+export function dogReducer(state=initialState, action) {
+  if (action.type === FETCH_DOG_REQUEST) {
     return Object.assign({}, state, { loading: true, error: null });
   }
-  if (action.type === FETCH_CAT_ERROR) {
+  if (action.type === FETCH_DOG_ERROR) {
     return Object.assign({}, state, { loading: false, error: action.error });
   }
-  if (action.type === FETCH_CAT_SUCCESS) {
+  if (action.type === FETCH_DOG_SUCCESS) {
     return Object.assign({}, state, { loading: false, error: null, animal: action.animal});
   } return state;
 }

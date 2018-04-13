@@ -17,13 +17,14 @@ export const fetchDogError = error => ({
 });
 
 export const fetchDog = (animal) => dispatch => {
-  dispatch(fetchDogRequest())
-  .then(fetch(`${API_BASE_URL}/api/dog`))
+  dispatch(fetchDogRequest());
+
+  return fetch(`${API_BASE_URL}/api/dog`)
   .then(res => {
     if (!res.ok) {
       throw new Error('Dog not found');
     } 
-    return res.json();
+    return res.json(res);
   })
   .then(animal => {dispatch(fetchDogSuccess(animal))})
   .catch(err => {dispatch(fetchDogError(err))});

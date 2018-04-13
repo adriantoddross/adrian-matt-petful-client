@@ -1,43 +1,43 @@
 import React from 'react';
 
-export default function Dashboard(catToAdopt, dogToAdopt) {
+export default function Dashboard(props) {
 
     return (
       <div className="App">
       <section>
         <header>
-          <h3>{catToAdopt.name}</h3>
-          <img src={catToAdopt.imageURL} alt={catToAdopt.imageDescription} className='animal-image'/>
+          <h3>{props.catToAdopt.name}</h3>
+          <img src={props.catToAdopt.imageURL} alt={props.catToAdopt.imageDescription} className='animal-image'/>
         </header>
           <main role='main'>
               <dl>
                 <dt>Sex</dt>
-                <dd>{catToAdopt.sex}</dd>
+                <dd>{props.catToAdopt.sex}</dd>
                 <dt>Age</dt>
-                <dd>{catToAdopt.age} years</dd>
+                <dd>{props.catToAdopt.age} years</dd>
                 <dt>Breed</dt>
-                <dd>{catToAdopt.breed}</dd>
+                <dd>{props.catToAdopt.breed}</dd>
                 <dt>Story</dt>
-                <dd>{catToAdopt.story}</dd>
+                <dd>{props.catToAdopt.story}</dd>
               </dl>
             </main>
             <button type="submit">Adopt</button>
       </section>
       <section>
         <header>
-          <h3>{dogToAdopt.name}</h3>
-          <img src={dogToAdopt.imageURL} alt={dogToAdopt.imageDescription} className='animal-image'/>
+          <h3>{props.dogToAdopt.name}</h3>
+          <img src={props.dogToAdopt.imageURL} alt={props.dogToAdopt.imageDescription} className='animal-image'/>
         </header>
           <main role='main'>
               <dl>
                 <dt>Sex</dt>
-                <dd>{dogToAdopt.sex}</dd>
+                <dd>{props.dogToAdopt.sex}</dd>
                 <dt>Age</dt>
-                <dd>{dogToAdopt.age} years</dd>
+                <dd>{props.dogToAdopt.age} years</dd>
                 <dt>Breed</dt>
-                <dd>{dogToAdopt.breed}</dd>
+                <dd>{props.dogToAdopt.breed}</dd>
                 <dt>Story</dt>
-                <dd>{dogToAdopt.story}</dd>
+                <dd>{props.dogToAdopt.story}</dd>
               </dl>
             </main>
             <button type="submit">Adopt</button>

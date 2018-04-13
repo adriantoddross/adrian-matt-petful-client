@@ -16,7 +16,7 @@ export const fetchCatError = error => ({
   error
 });
 
-export function fetchCat(animal) {
+export const fetchCat = (animal) => dispatch => {
   dispatch(fetchCatRequest())
   .then(fetch(`${API_BASE_URL}/api/cat`))
   .then(res => {

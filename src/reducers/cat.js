@@ -1,4 +1,4 @@
-import { FETCH_CAT_SUCCESS, FETCH_CAT_REQUEST, FETCH_CAT_ERROR, DELETE_CAT_ERROR, DELETE_CAT_SUCCESS, DELETE_CAT_REQUEST, deleteCat } from '../actions/index';
+import { FETCH_CAT_SUCCESS, FETCH_CAT_REQUEST, FETCH_CAT_ERROR, DELETE_CAT_ERROR, DELETE_CAT_SUCCESS, DELETE_CAT_REQUEST } from '../actions/index';
 
 const initialState = {
   animal: null,

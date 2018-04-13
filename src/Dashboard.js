@@ -12,22 +12,42 @@ export class Dashboard extends Component {
   }
 
   render() {
-    // console.log('ANIMAL', this.props.cat.animal);
-    let dog;
-    if (this.props.dog) {
+    let dog = {
+      imageURL: 'http://img.freepik.com/free-photo/husky-breed-dog-with-tongue-out_1187-1500.jpg?size=338&ext=jpg',
+      name: 'Test Doggy',
+      sex: 'female',
+      age: 1,
+      breed: 'Husky',
+      story: 'Rejected by mother.'
+    };
+
+    let cat =   {
+      imageURL: 'https://static.pexels.com/photos/20787/pexels-photo.jpg',
+      imageDescription: 'Grey siamese cat with bright green eyes, looking up to the camera.',
+      name: 'Test Kitty',
+      sex: 'female',
+      age: 3,
+      breed: 'Siamese',
+      story: 'Abandoned by previous owner.'
+    };
+
+    if (this.props.dog && this.props.cat) {
+      cat = this.props.cat;
       dog = this.props.dog;
-      console.log(dog);
-    }
-    
+}
 
     return (
       <div className="App">
-        {/* <p>{this.props.catError}</p> */}
-        <Pet 
-          animal={dog} 
-          onAdoptPet={() => {console.log('Pet adopted')}} 
-        />
-        <p>{this.props.dogError}</p>        
+        <Pet
+          animal={cat}
+          onAdoptPet={() => {console.log('Pet adopted')}}
+          />
+          <p>{this.props.catError}</p>
+        <Pet
+          animal={dog}
+          onAdoptPet={() => {console.log('Pet adopted')}}
+          />
+          <p>{this.props.dogError}</p>
       </div>
     );
   }
@@ -37,7 +57,9 @@ const mapStateToProps = (state) => ({
   cat: state.cat.animal,
   dog: state.dog.animal,
   catError: state.cat.error,
-  dogError: state.dog.error
+  dogError: state.dog.error,
+  catLoading: state.cat.loading,
+  dogLoading: state.dog.loading
 });
 
 export default connect(mapStateToProps)(Dashboard);

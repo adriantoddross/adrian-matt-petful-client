@@ -31,13 +31,21 @@ export class Dashboard extends Component {
       story: 'Abandoned by previous owner.'
     };
 
+    let animalLoading = '';
+
     if (this.props.dog && this.props.cat) {
       cat = this.props.cat;
       dog = this.props.dog;
 }
 
+    if (this.props.catLoading || this.props.dogLoading) {
+      animalLoading = 'Finding our next animal up for adoption!';
+
+    }
+
     return (
       <div className="App">
+        <h1>{animalLoading}</h1>
         <Pet
           animal={cat}
           onAdoptPet={() => {console.log('Pet adopted')}}

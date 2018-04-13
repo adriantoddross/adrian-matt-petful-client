@@ -2,13 +2,12 @@ import React, { Component } from 'react';
 import Pet from './Pet';
 
 import { connect } from 'react-redux';
-import { fetchCat, fetchDog } from './actions/index';
+import { fetchCat, fetchDog, deleteCat } from './actions/index';
 
 export class Dashboard extends Component {
   componentDidMount(){
     this.props.dispatch(fetchCat());
     this.props.dispatch(fetchDog());
-
   }
 
   render() {
@@ -48,7 +47,8 @@ export class Dashboard extends Component {
         <h1>{animalLoading}</h1>
         <Pet
           animal={cat}
-          onAdoptPet={() => {this.props.dispatch(fetchCat())}}
+          onAdoptPet={() => {this.props.dispatch(deleteCat())
+          }}
           />
           <p>{this.props.catError}</p>
         <Pet

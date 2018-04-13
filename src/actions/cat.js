@@ -22,7 +22,7 @@ export const fetchCat = (animal) => dispatch => {
   return fetch(`${API_BASE_URL}/api/cat`)
   .then(res => {
     if (!res.ok) {
-      throw new Error('Cat not found');
+      console.log('Cat not found');
     }
     return res.json(res);
   })
@@ -47,18 +47,16 @@ export const deleteCatError = error => ({
   error
 });
 
-export const deleteCat = (animal) => dispatch => {
+export const deleteCat = () => dispatch => {
   dispatch(deleteCatRequest());
-
   return fetch(`${API_BASE_URL}/api/cat`, {
     method: 'DELETE',
   })
   .then(res => {
-    if (!res.ok) {
-      throw new Error('Cat not found');
-    }
-    return res.json(res);
+    console.log(res);
+    // return res.json(res);
   })
-  .then(animal => {dispatch(deleteCatSuccess(animal))})
+  .then( () => {dispatch(deleteCatSuccess())})
+  .then(() => {dispatch(fetchCat())})
   .catch(err => {dispatch(deleteCatError(err))});
 }

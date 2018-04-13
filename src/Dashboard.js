@@ -6,6 +6,7 @@ import { fetchCat, fetchDog } from './actions/index';
 
 export function Dashboard(props) {
 
+
   const Fluffy = {
     imageURL:'https://assets3.thrillist.com/v1/image/2622128/size/tmg-slideshow_l.jpg',
     imageDescription: 'Orange bengal cat with black stripes lounging on concrete.',
@@ -44,3 +45,5 @@ const mapStateToProps = (state) => ({
   cat: state.cat.animal,
   dog: state.dog.animal
 });
+
+export default connect(mapStateToProps)(Dashboard);
